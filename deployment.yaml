@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simplego
+  labels: {app: simplego}
+spec:
+  replicas: 2
+  template:
+    metadata: {labels: {app: simplego}}
+    spec:
+      containers:
+      - name: simplego
+        image: simplego:v.1.0
+        command:
+        ports:
+          - containerPort: 9090

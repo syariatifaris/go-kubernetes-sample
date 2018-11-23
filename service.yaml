@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: simplego
+spec:
+  type: LoadBalancer
+  selector:
+    app: simplego
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9090
+    nodePort: 30003
