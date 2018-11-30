@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: simplego-rs
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: simplego
+  template:
+    metadata:
+      labels:
+        app: simplego
+    spec:
+      containers:
+      - name: simplego
+        image: simplego:v.1.0
+        ports:
+        - containerPort: 9090
