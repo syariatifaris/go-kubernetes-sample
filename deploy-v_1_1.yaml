@@ -15,7 +15,7 @@ spec:
       maxSurge: 1
   template:
     metadata:
-      labels:
+      labels: #created pods will have this label
         app: simplego
         version: v.1.1
     spec:

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: simplego
   labels:
+    app: simplego
     version: v.1.1
 spec:
   containers:

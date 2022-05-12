@@ -6,8 +6,9 @@ metadata:
   #   app: simplego
 spec:
   type: LoadBalancer
-  selector:
+  selector: #map to pods with matched lavel
     app: simplego
+    zone: prod
     #version: v.1.1 #map to pods with label v.1.1
   ports:
   - protocol: TCP
