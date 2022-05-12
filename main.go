@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -16,5 +17,5 @@ func main() {
 func handleSomething(writer http.ResponseWriter, r *http.Request) {
 	writer.Header().Add("Content-Type", "application/json")
 	writer.WriteHeader(http.StatusOK)
-	writer.Write([]byte("hello"))
+	writer.Write([]byte("it works version 2\n"))
 }

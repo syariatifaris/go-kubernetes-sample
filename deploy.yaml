@@ -1,20 +1,26 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: simplego-rs-1.1
+  name: simplego-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: simplego
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
         app: simplego
-        version: v.1.1
+        zone: prod
     spec:
       containers:
       - name: simplego
-        image: simplego:v.1.1
+        image: simplego:v.1.0
         ports:
         - containerPort: 9090

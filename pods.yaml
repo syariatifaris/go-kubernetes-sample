@@ -3,11 +3,10 @@ kind: Pod
 metadata:
   name: simplego
   labels:
-    zone: prod
-    version: v1
+    version: v.1.1
 spec:
   containers:
   - name: simplego
-    image: simplego:v.1.0
+    image: simplego:v.1.1
     ports:
     - containerPort: 9090
