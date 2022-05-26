@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: simplego-deploy
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: simplego
@@ -17,7 +17,7 @@ spec:
     metadata:
       labels: #created pods will have this label
         app: simplego
-        zone: prod
+        version: v.1.0
     spec:
       containers:
       - name: simplego

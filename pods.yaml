@@ -4,10 +4,10 @@ metadata:
   name: simplego
   labels:
     app: simplego
-    version: v.1.1
+    version: v.1.0
 spec:
   containers:
   - name: simplego
-    image: simplego:v.1.1
+    image: simplego:v.1.0
     ports:
     - containerPort: 9090

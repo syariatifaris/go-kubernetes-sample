@@ -17,5 +17,5 @@ func main() {
 func handleSomething(writer http.ResponseWriter, r *http.Request) {
 	writer.Header().Add("Content-Type", "application/json")
 	writer.WriteHeader(http.StatusOK)
-	writer.Write([]byte("it works version 2\n"))
+	writer.Write([]byte("it works!\n"))
 }
