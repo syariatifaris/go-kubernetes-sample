@@ -1,11 +1,14 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: simplego
+  name: simplego-svc
+  # labels:
+  #   app: simplego
 spec:
   type: LoadBalancer
-  selector:
+  selector: #map to pods with matched label
     app: simplego
+    version: v.1.0 #map to pods with label v.1.1
   ports:
   - protocol: TCP
     port: 80

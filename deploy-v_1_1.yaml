@@ -1,15 +1,21 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: simplego-rs-1.1
+  name: simplego-deploy-v.1.1
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: simplego
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
-      labels:
+      labels: #created pods will have this label
         app: simplego
         version: v.1.1
     spec:
